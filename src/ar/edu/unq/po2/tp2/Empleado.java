@@ -3,11 +3,11 @@ package ar.edu.unq.po2.tp2;
 abstract class Empleado {
 	private String nombre;
 	private String direccion;
-	public Boolean soltero;
+	public boolean soltero;
 	private int fechaDeNacimiento;
-	private float sueldoBasico;
+	private double sueldoBasico;
 
-	public float getSueldoBasico() {
+	public double getSueldoBasico() {
 		return sueldoBasico;
 	}
 
@@ -19,13 +19,13 @@ abstract class Empleado {
 		return fechaActual - this.getFechaDeNacimiento();
 	}
 
-	public float sueldoNeto() {
+	public double sueldoNeto() {
 		return this.sueldoBruto()-this.retenciones();
 	}
 
-	abstract float sueldoBruto();
+	abstract double sueldoBruto();
 
-	abstract float retenciones();
+	abstract double retenciones();
 
 	public String getNombre() {
 		return nombre;
@@ -58,5 +58,15 @@ abstract class Empleado {
 	public void setFechaDeNacimiento(int fechaDeNacimiento) {
 		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
+
+	public Empleado(String nombre, String direccion, boolean soltero, int fechaDeNacimiento, double sueldoBasico) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.soltero = soltero;
+		this.fechaDeNacimiento = fechaDeNacimiento;
+		this.sueldoBasico = sueldoBasico;
+	}
+	
+	
 
 }

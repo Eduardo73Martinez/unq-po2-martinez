@@ -1,44 +1,47 @@
 package ar.edu.unq.po2.tp2;
 
 public class Temporal extends Empleado {
-	private int FechaIngreso;
+	private int fechaIngreso;
 	private int cantHorasExtra;
-	private float precioPorHoraExtra = 40;
+	private double precioPorHoraExtra = 40;
 
-	public float correspondePorHorasExtra() {
+	public double correspondePorHorasExtra() {
 		return this.getPrecioPorHoraExtra() * this.getCantHorasExtra();
 	}
 
-	public float obraSocial() {
+	public double obraSocial() {
 		return (10 * this.sueldoBruto() / 100) + this.cantidadSiSuperaLos50Años();
 	}
 
-	public float aportesJubilatorios() {
+	public double aportesJubilatorios() {
 		return (10 * this.sueldoBruto() / 100) + 5 * this.getCantHorasExtra();
 	}
 
-	public float cantidadSiSuperaLos50Años() {
-		return if(  this.getAntiguedad()>50) {25} else {0};
+	public double cantidadSiSuperaLos50Años() {
+		if(  this.getAntiguedad()>50) {
+			return 25;
+		} else {
+			return 0;}
 	}
 
 	@Override
-	float sueldoBruto() {
+	double sueldoBruto() {
 		// TODO Auto-generated method stub
 		return this.getSueldoBasico() + this.correspondePorHorasExtra();
 	}
 
 	@Override
-	float retenciones() {
+	double retenciones() {
 		// TODO Auto-generated method stub
 		return this.obraSocial() + this.aportesJubilatorios();
 	}
 
 	public int getFechaIngreso() {
-		return FechaIngreso;
+		return fechaIngreso;
 	}
 
-	public void setFechaIngreso(int fechaIngreso) {
-		FechaIngreso = fechaIngreso;
+	public void setFechaIngreso(int ingreso) {
+		fechaIngreso = ingreso;
 	}
 
 	public int getCantHorasExtra() {
@@ -49,12 +52,26 @@ public class Temporal extends Empleado {
 		this.cantHorasExtra = cantHorasExtra;
 	}
 
-	public float getPrecioPorHoraExtra() {
+	public double getPrecioPorHoraExtra() {
 		return precioPorHoraExtra;
 	}
 
 	public void setPrecioPorHoraExtra(float precioPorHoraExtra) {
 		this.precioPorHoraExtra = precioPorHoraExtra;
 	}
+	public int getAntiguedad() {
+		return 2023 -this.getFechaIngreso();
+	}
+
+	public Temporal(String nombre, String direccion, boolean soltero, int fechaDeNacimiento, double sueldoBasico,
+			int fechaIngreso, int cantHorasExtra, double precioPorHoraExtra) {
+		super(nombre, direccion, soltero, fechaDeNacimiento, sueldoBasico);
+		this.fechaIngreso = fechaIngreso;
+		this.cantHorasExtra = cantHorasExtra;
+		this.precioPorHoraExtra = precioPorHoraExtra;
+	}
+
+	
+	
 
 }

@@ -4,8 +4,8 @@ public class Recibo {
 	private String nombreEmpleado;
 	private String direccion;
 	private int fechaEmision;
-	private Float sueldoBruto;
-	private Float sueldoNeto;
+	private double sueldoBruto;
+	private double sueldoNeto;
 
 	public String getNombreEmpleado() {
 		return nombreEmpleado;
@@ -31,7 +31,7 @@ public class Recibo {
 		this.fechaEmision = fechaEmision;
 	}
 
-	public Float getSueldoBruto() {
+	public double getSueldoBruto() {
 		return sueldoBruto;
 	}
 
@@ -39,7 +39,7 @@ public class Recibo {
 		this.sueldoBruto = sueldoBruto;
 	}
 
-	public Float getSueldoNeto() {
+	public double getSueldoNeto() {
 		return sueldoNeto;
 	}
 

@@ -1,17 +1,17 @@
 package ar.edu.unq.po2.tp2;
 
 public class Contratado extends Empleado {
-	private int numeroDeContrato;
-	private int medioDePago;
+	public int numeroDeContrato;
+	public int medioDePago;
 
 	@Override
-	float sueldoBruto() {
+	double sueldoBruto() {
 		// TODO Auto-generated method stub
 		return this.getSueldoBasico();
 	}
 
 	@Override
-	float retenciones() {
+	double retenciones() {
 		// TODO Auto-generated method stub
 		return 50;
 	}
@@ -29,6 +29,13 @@ public class Contratado extends Empleado {
 	}
 
 	public void setMedioDePago(int medioDePago) {
+		this.medioDePago = medioDePago;
+	}
+
+	public Contratado(String nombre, String direccion, boolean soltero, int fechaDeNacimiento, double sueldoBasico,
+			int numeroDeContrato, int medioDePago) {
+		super(nombre, direccion, soltero, fechaDeNacimiento, sueldoBasico);
+		this.numeroDeContrato = numeroDeContrato;
 		this.medioDePago = medioDePago;
 	}
 
