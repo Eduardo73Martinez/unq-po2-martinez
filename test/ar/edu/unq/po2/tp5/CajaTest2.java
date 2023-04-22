@@ -51,7 +51,6 @@ class CajaTest2 {
 	@Test
 	void testRegistrarPago() {
 		caja1.registrarPago(facturaServicio);
-		caja1.registrar(producto1);
 		assertEquals(caja1.getMontoAPagar(), 1300);
 	}
 

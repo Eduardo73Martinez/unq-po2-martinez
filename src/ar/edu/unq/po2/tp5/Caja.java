@@ -43,10 +43,8 @@ public class Caja implements Agencia{
 
 	@Override
 	public void registrarPago(Factura factura) {
-		// TODO Auto-generated method stub
 		montoAPagar += factura.precio();
-		//ahora puede registrar pagos de facturas de servicios, impuestos, productos tradicionales y de cooperativas
 		
 	}
-	
+
 }

@@ -1,10 +1,10 @@
-package edu.org.unq.tp1;
+package ar.edu.unq.po2.jueves1;
+
 import java.util.*;
+import java.util.List;
+
 public class Filter {
-	
-	
-	
-	
+
 	public static void main(String[] args) {
 		List<Producto> resultado = new ArrayList<Producto>();
 		resultado.add(new Producto ("Milanesa", 800));
